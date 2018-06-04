@@ -1,0 +1,289 @@
+focus_tree = {
+	id = soviet_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SOV
+		}
+	}
+default = no
+#Custom focuses start here
+#Focus for Rally The People 
+		focus = { 
+		id = rallythepeople 
+		icon = GFX_focus_generic_join_comintern 
+		ai_will_do = { factor = 0} 
+ x =1 
+ y =0 
+ mutually_exclusive = { } 
+ prerequisite = { } 
+ cost = 10  
+  available_if_capitulated = yes  
+ completion_reward = { 
+ add_stability = .5 
+ } 
+ }#Focus for Industrial Investment 
+		focus = { 
+		id = industrialinvestment 
+		icon = GFX_goal_generic_soviet_construction 
+		ai_will_do = { factor = 0} 
+ x =7 
+ y =0 
+ mutually_exclusive = { } 
+ prerequisite = { } 
+ cost = 10  
+  available_if_capitulated = yes  
+ completion_reward = { 
+ 							random_owned_controlled_state = { 
+ 									limit = { 
+ 										free_building_slots = { 
+ 												building = industrial_complex 
+ 												size > 0 
+ 												include_locked = yes 
+ 										} 
+ 									} 
+ 									add_extra_state_shared_building_slots = 1 
+ 									add_building_construction = { 
+ 										type = industrial_complex 
+ 										level = 1 
+ 										instant_build = yes 
+ 									} 
+ 									set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER 
+ 							} 
+ every_owned_state = { 
+ 				limit = { 
+ 					ROOT = { has_full_control_of_state = PREV } 
+ 					is_core_of = ROOT 
+ 				} 
+ 				add_building_construction = { 
+ 					type = infrastructure 
+ 					level = 1 
+ 					instant_build = yes 
+ 				} 
+ 			} 
+ 						 
+ } 
+ }#Focus for Strengthen Government 
+		focus = { 
+		id = strengthengovernment 
+		icon = GFX_goal_generic_forceful_treaty 
+		ai_will_do = { factor = 0} 
+ x =0 
+ y =1 
+ mutually_exclusive = { } 
+ prerequisite = { focus = rallythepeople} 
+ cost = 10  
+  available_if_capitulated = yes  
+ completion_reward = { 
+ add_political_power = 200 
+ } 
+ }#Focus for RSFSR Research Facility 
+		focus = { 
+		id = rsfsrresearchfacility 
+		icon = GFX_focus_generic_socialist_science 
+		ai_will_do = { factor = 0} 
+ x =2 
+ y =1 
+ mutually_exclusive = { } 
+ prerequisite = { focus = rallythepeople} 
+ cost = 10  
+  available_if_capitulated = yes  
+ completion_reward = { 
+ add_research_slot = 1 
+ } 
+ }#Focus for Military Industrial Complex 
+		focus = { 
+		id = militaryindustrialcomplex 
+		icon = GFX_goal_generic_construct_mil_factory 
+		ai_will_do = { factor = 0} 
+ x =5 
+ y =1 
+ mutually_exclusive = { } 
+ prerequisite = { focus = industrialinvestment} 
+ cost = 10  
+  available_if_capitulated = yes  
+ completion_reward = { 
+ 							random_owned_controlled_state = { 
+ 									limit = { 
+ 										free_building_slots = { 
+ 												building = arms_factory 
+ 												size > 0 
+ 												include_locked = yes 
+ 										} 
+ 									} 
+ 									add_extra_state_shared_building_slots = 1 
+ 									add_building_construction = { 
+ 										type = arms_factory 
+ 										level = 1 
+ 										instant_build = yes 
+ 									} 
+ 									set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER 
+ 							} 
+ 													random_owned_controlled_state = { 
+ 									limit = { 
+ 										free_building_slots = { 
+ 												building = arms_factory 
+ 												size > 0 
+ 												include_locked = yes 
+ 										} 
+ 									} 
+ 									add_extra_state_shared_building_slots = 1 
+ 									add_building_construction = { 
+ 										type = arms_factory 
+ 										level = 1 
+ 										instant_build = yes 
+ 									} 
+ 									set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER 
+ 							} 
+ 						 
+ } 
+ }#Focus for City Development 
+		focus = { 
+		id = citydevelopment 
+		icon = GFX_goal_generic_construct_infrastructure 
+		ai_will_do = { factor = 0} 
+ x =7 
+ y =1 
+ mutually_exclusive = { } 
+ prerequisite = { focus = industrialinvestment} 
+ cost = 10  
+  available_if_capitulated = yes  
+ completion_reward = { 
+ every_owned_state = { 
+ 				limit = { 
+ 					ROOT = { has_full_control_of_state = PREV } 
+ 					is_core_of = ROOT 
+ 				} 
+ 				add_building_construction = { 
+ 					type = infrastructure 
+ 					level = 1 
+ 					instant_build = yes 
+ 				} 
+ 			} 
+ } 
+ }#Focus for Civilian Infanstructure 
+		focus = { 
+		id = civilianinfanstructure 
+		icon = GFX_goal_generic_construct_civ_factory 
+		ai_will_do = { factor = 0} 
+ x =9 
+ y =1 
+ mutually_exclusive = { } 
+ prerequisite = { focus = industrialinvestment} 
+ cost = 10  
+  available_if_capitulated = yes  
+ completion_reward = { 
+ 							random_owned_controlled_state = { 
+ 									limit = { 
+ 										free_building_slots = { 
+ 												building = industrial_complex 
+ 												size > 0 
+ 												include_locked = yes 
+ 										} 
+ 									} 
+ 									add_extra_state_shared_building_slots = 1 
+ 									add_building_construction = { 
+ 										type = industrial_complex 
+ 										level = 1 
+ 										instant_build = yes 
+ 									} 
+ 									set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER 
+ 							} 
+ 													random_owned_controlled_state = { 
+ 									limit = { 
+ 										free_building_slots = { 
+ 												building = industrial_complex 
+ 												size > 0 
+ 												include_locked = yes 
+ 										} 
+ 									} 
+ 									add_extra_state_shared_building_slots = 1 
+ 									add_building_construction = { 
+ 										type = industrial_complex 
+ 										level = 1 
+ 										instant_build = yes 
+ 									} 
+ 									set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER 
+ 							} 
+ 													random_owned_controlled_state = { 
+ 									limit = { 
+ 										free_building_slots = { 
+ 												building = industrial_complex 
+ 												size > 0 
+ 												include_locked = yes 
+ 										} 
+ 									} 
+ 									add_extra_state_shared_building_slots = 1 
+ 									add_building_construction = { 
+ 										type = industrial_complex 
+ 										level = 1 
+ 										instant_build = yes 
+ 									} 
+ 									set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER 
+ 							} 
+ 						 
+ } 
+ }#Focus for Complete Control 
+		focus = { 
+		id = completecontrol 
+		icon = GFX_focus_ger_great_red_menace 
+		ai_will_do = { factor = 0} 
+ x =0 
+ y =2 
+ mutually_exclusive = { } 
+ prerequisite = { focus = strengthengovernment} 
+ cost = 10  
+  available_if_capitulated = yes  
+ completion_reward = { 
+  
+ 						political_power_daily > 2 
+ } 
+ }#Focus for RSFSR Research Facility Expansion 
+		focus = { 
+		id = rsfsrresearchfacilityexpansion 
+		icon = GFX_focus_generic_socialist_science 
+		ai_will_do = { factor = 0} 
+ x =2 
+ y =2 
+ mutually_exclusive = { } 
+ prerequisite = { focus = rsfsrresearchfacility} 
+ cost = 10  
+  available_if_capitulated = yes  
+ completion_reward = { 
+ add_research_slot = 1 
+ } 
+ }#Focus for Military Industrial Complex Expansion 
+		focus = { 
+		id = militaryindustrialcomplexexpansion 
+		icon = GFX_goal_generic_construct_mil_factory 
+		ai_will_do = { factor = 0} 
+ x =5 
+ y =2 
+ mutually_exclusive = { } 
+ prerequisite = { focus = militaryindustrialcomplex} 
+ cost = 10  
+  available_if_capitulated = yes  
+ completion_reward = { 
+ 							random_owned_controlled_state = { 
+ 									limit = { 
+ 										free_building_slots = { 
+ 												building = arms_factory 
+ 												size > 0 
+ 												include_locked = yes 
+ 										} 
+ 									} 
+ 									add_extra_state_shared_building_slots = 1 
+ 									add_building_construction = { 
+ 										type = arms_factory 
+ 										level = 1 
+ 										instant_build = yes 
+ 									} 
+ 									set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER 
+ 							} 
+ 						 
+ } 
+ }#End of focuses 
+}
