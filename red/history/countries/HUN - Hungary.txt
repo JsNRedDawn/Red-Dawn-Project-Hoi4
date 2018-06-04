@@ -17,6 +17,16 @@ set_technology = {
 	CAS1 = 1
 }
 
+if = {
+	limit = {
+		has_dlc = "Death or Dishonor"
+	}
+	add_ideas = {
+		disarmed_nation
+		HUN_treaty_of_triannon
+	}
+}
+
 1939.1.1 = {
 	remove_ideas = HUN_treaty_of_triannon
 
@@ -131,22 +141,55 @@ set_politics = {
 		}
 	}
 	
-	ruling_party = communism
+	ruling_party = neutrality
 	last_election = "1935.3.31"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 #Start Horty as neutral if DOD
+if = {
+	limit = {
+		has_dlc = "Death or Dishonor"
+	}
+	create_country_leader = {
+		name = "Miklós Horthy"
+		desc = "POLITICS_MIKLOS_HORTHY_DESC"
+		picture = "Portrait_Hungary_Miklos_Horthy.dds"
+		expire = "1965.1.1"
+		ideology = oligarchism
+		traits = {
+			fascist_sympathies
+			anti_communist
+		}
+		id = 500 #Horthy Neutral
+	}
+	else = {
+		create_country_leader = {
+			name = "Miklós Horthy"
+			desc = "POLITICS_MIKLOS_HORTHY_DESC"
+			picture = "Portrait_Hungary_Miklos_Horthy.dds"
+			expire = "1965.1.1"
+			ideology = despotism
+		}
+		create_country_leader = {
+			name = "Miklós Horthy"
+			desc = "POLITICS_MIKLOS_HORTHY_DESC"
+			picture = "Portrait_Hungary_Miklos_Horthy.dds"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+		}
+	}
+}
 
 create_country_leader = {
 	name = "Pal Losonczi"
-	desc = "POLITICS_MATYAS_RAKOSKI_DESC"
+	desc = "POLITICS_ARPAD_SZAKASITS_DESC"
 	picture = "gfx/leaders/HUN/losonczi_portrait.dds"
 	expire = "2020.1.1"
 	ideology = stalinism
 	traits = {
-		#
+		
 	}
 }
 
@@ -185,22 +228,22 @@ create_country_leader = {
 
 		parties = {
 			democratic = { 
-				popularity = 27
+				popularity = 0
 			}
 
 			fascism = {
-				popularity = 70
+				popularity = 0
 			}
 			
 			communism = {
-				popularity = 3
+				popularity = 100
 			}
 		}
 		
-		ruling_party = fascism
+		ruling_party = communism
 		last_election = "1939.5.29"
 		election_frequency = 48
-		elections_allowed = yes
+		elections_allowed = no
 	}
 
 }

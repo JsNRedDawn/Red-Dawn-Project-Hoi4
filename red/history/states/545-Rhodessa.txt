@@ -10,7 +10,7 @@ state={
 	}
 
 	history={
-		owner = ENG
+		owner = ZIM
 		buildings = {
 			infrastructure = 3
 
