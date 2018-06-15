@@ -39,7 +39,6 @@ set_technology = {
 
 #Monroe Doctrine
 give_guarantee = CAN
-give_guarantee = MEX
 give_guarantee = CUB
 give_guarantee = HAI
 give_guarantee = DOM
@@ -75,6 +74,7 @@ add_to_faction = DEN
 add_to_faction = ICE
 add_to_faction = CAN
 add_to_faction = ITA
+add_to_Faction = POR
 
 
 

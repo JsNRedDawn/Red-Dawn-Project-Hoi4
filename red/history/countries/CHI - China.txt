@@ -186,10 +186,10 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Zhang Guotao"
+	name = "Ye Jianying"
 	desc = "POLITICS_ZHANG_GUOTAO_DESC"
-	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_land_4.dds"
-	expire = "1965.1.1"
+	picture = "gfx/leaders/CHI/ye_portrait.dds"
+	expire = "2020.1.1"
 	ideology = leninism
 	traits = {
 		cornered_fox
